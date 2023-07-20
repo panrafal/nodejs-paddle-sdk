@@ -4,7 +4,7 @@ export default {
   input: './src/index.ts',
   output: [
     {
-      file: 'dist/node-paddle-sdk.cjs.js',
+      file: 'dist/node-paddle-sdk.cjs',
       format: 'cjs',
     },
     {
