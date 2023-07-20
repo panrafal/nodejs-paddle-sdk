@@ -1,0 +1,33 @@
+import { CancelUserParameters, CreateCouponsParameters, CreateCouponsResponse, CreateModifiersParameters, CreateModifiersResponse, CreateOneOffChargeParameters, CreateOneOffChargeResponse, CreatePlanParameters, CreatePlanResponse, DeleteCouponsParameters, DeleteModifiersParameters, GenerateLicenseParameters, GenerateLicenseResponse, GeneratePayLinkParameters, GeneratePayLinkResponse, GetWebhookHistoryParameters, GetWebhookHistoryResponse, ListCouponsParameters, ListCouponsResponse, ListModifiersParameters, ListModifiersResponse, ListPaymentsParameters, ListPaymentsResponse, ListPlansParameters, ListPlansResponse, ListProductsResponse, ListTransactionsParameters, ListTransactionsResponse, ListUsersParameters, ListUsersResponse, RefundPaymentParameters, RefundPaymentResponse, ReschedulePaymentParameters, UpdateCouponsParameters, UpdateCouponsResponse, UpdateUserParameters, UpdateUserResponse } from './types';
+export * from './types';
+export * from './webhook';
+export declare class PaddleSDK {
+    readonly vendorId: number;
+    readonly vendorAuthCode: string;
+    readonly publicKey?: string;
+    readonly server?: string;
+    constructor(vendorId: number, vendorAuthCode: string, publicKey?: string, server?: string);
+    private _request;
+    listCoupons(parameters: ListCouponsParameters): Promise<ListCouponsResponse>;
+    createCoupon(parameters: CreateCouponsParameters): Promise<CreateCouponsResponse>;
+    deleteCoupon(parameters: DeleteCouponsParameters): Promise<undefined>;
+    updateCoupon(parameters: UpdateCouponsParameters): Promise<UpdateCouponsResponse>;
+    listProducts(): Promise<ListProductsResponse>;
+    generateLicense(parameters: GenerateLicenseParameters): Promise<GenerateLicenseResponse>;
+    generatePayLink(parameters: GeneratePayLinkParameters): Promise<GeneratePayLinkResponse>;
+    listTransactions(parameters: ListTransactionsParameters): Promise<ListTransactionsResponse>;
+    refundPayment(parameters: RefundPaymentParameters): Promise<RefundPaymentResponse>;
+    listPlans(parameters: ListPlansParameters): Promise<ListPlansResponse>;
+    createPlan(parameters: CreatePlanParameters): Promise<CreatePlanResponse>;
+    listUsers(parameters: ListUsersParameters): Promise<ListUsersResponse>;
+    updateUser(parameters: UpdateUserParameters): Promise<UpdateUserResponse>;
+    cancelUser(parameters: CancelUserParameters): Promise<undefined>;
+    listModifiers(parameters: ListModifiersParameters): Promise<ListModifiersResponse>;
+    createModifier(parameters: CreateModifiersParameters): Promise<CreateModifiersResponse>;
+    deleteModifier(parameters: DeleteModifiersParameters): Promise<undefined>;
+    listPayments(parameters: ListPaymentsParameters): Promise<ListPaymentsResponse>;
+    reschedulePayment(parameters: ReschedulePaymentParameters): Promise<undefined>;
+    createOneOffCharge(parameters: CreateOneOffChargeParameters): Promise<CreateOneOffChargeResponse>;
+    getWebhookHistory(parameters: GetWebhookHistoryParameters): Promise<GetWebhookHistoryResponse>;
+    verifyWebhook(body: any): boolean;
+}
